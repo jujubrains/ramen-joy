@@ -1,5 +1,8 @@
 import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios"; 
+import MediaCard from "../components/Card";
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
 
 const Search = () => {
@@ -16,9 +19,26 @@ const Search = () => {
     console.log("sending search to api"); 
     console.log(search); 
     const response = await axios("/api/restaurant/yelp")
-    console.log(response.data); 
-    
+    const {data} = response; 
+    // console.log(data); 
+    setSearchResults(data);
+    console.log(searchResults); 
+    // renderRestaurants(); 
 }
+  function renderRestaurants(){
+    {console.log(searchResults)};
+    // const {businesse
+    return( 
+      <Grid item sm={6} xs={12} spacing={3}>
+        {
+        searchResults.businesses.map((restaurant) =>{
+          const { image_url, name} = restaurant; 
+          return <MediaCard imageUrl={image_url} name={name}/>
+        })
+      }
+      </Grid>
+    ) 
+  }
 
   return ( 
     <div>
@@ -31,7 +51,9 @@ const Search = () => {
         />
         <button type="submit" >Search</button>
       </form> 
-      <div>Display Search results</div>
+      <div>Display Search results
+      </div>
+      { searchResults ? renderRestaurants() : "no books" }
     </div>
    );
 }
