@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema; 
 
 const UserSchema = new Schema({
+  name: {
+    type: String, 
+    required: true
+  },
   email: {
     type: String, 
     required: true
@@ -9,6 +13,10 @@ const UserSchema = new Schema({
   password: {
     type: String, 
     required: true
+  },
+  login: {
+    type: Boolean,
+    default: false
   }
 })
 
