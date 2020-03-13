@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Books from "./pages/Books";
 import Login from "./pages/Login"
 import Nav from "./components/Nav";
 import Search from "./pages/Search";
 import Friends from "./pages/Friends"; 
+import Wrapper from "./components/Wrapper";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -26,5 +27,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
