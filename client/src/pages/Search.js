@@ -7,7 +7,7 @@ import Grid from '@material-ui/core/Grid';
 
 const Search = () => {
   const [search, setSearch] = useState(); 
-  const [searchResults, setSearchResults] = useState([]); 
+  const [searchResults, setSearchResults] = useState(); 
 
   function handleInput(e){
     const input = e.target.value; 
@@ -20,16 +20,18 @@ const Search = () => {
     console.log(search); 
     const response = await axios("/api/restaurant/yelp")
     const {data} = response; 
-    console.log(data); 
+    // console.log(data); 
     setSearchResults(data);
-    renderRestaurants(); 
+    console.log(searchResults); 
+    // renderRestaurants(); 
 }
   function renderRestaurants(){
-
-    return(
+    {console.log(searchResults)};
+    // const {businesse
+    return( 
       <Grid item sm={6} xs={12} spacing={3}>
         {
-        searchResults.map((restaurant) =>{
+        searchResults.businesses.map((restaurant) =>{
           const { image_url, name} = restaurant; 
           return <MediaCard imageUrl={image_url} name={name}/>
         })
@@ -51,6 +53,7 @@ const Search = () => {
       </form> 
       <div>Display Search results
       </div>
+      { searchResults ? renderRestaurants() : "no books" }
     </div>
    );
 }
