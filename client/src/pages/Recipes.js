@@ -1,11 +1,11 @@
-import React from 'react';
-import "../style/Friends.css";
+import React from "react";
+import "../style/Recipes.css";
 
-const Friends = () => {
-  return ( 
-     <div className="friends">
+const Recipes = () => {
+  return (
+    <div className="recipes">
       <div className="left">
-        <h1>Ramen Friends</h1>
+        <h1>Ramen Recipes</h1>
       </div>
       <div className="right">
         <p>
@@ -15,5 +15,5 @@ const Friends = () => {
     </div>
   );
 };
- 
-export default Friends;
+
+export default Recipes;

@@ -1,0 +1,41 @@
+.contact {
+  display: flex;
+  height: fit-content;
+  height: 80vh;
+  width: 100%;
+  margin: 0px 10px 0px 10px;
+  color: black;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+    color: black;
+  align-items: center;
+  flex-direction: column;
+}
+
+.listItem {
+  width: 60%;
+  margin: 10px 10px 10px 20px;
+  color: black;
+}
+
+.textContact {
+  width: 60%;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    font-size: 16px;
+  }
+  
+  .textContactHead {
+    margin: 0px;
+    font-size: 20px;
+  }
+}
