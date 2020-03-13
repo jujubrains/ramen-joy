@@ -1,19 +1,17 @@
 import React from "react";
 import "../style/Home.css";
+import Logo from "../images/ramenbowl.jpg";
 
 const Home = () => {
   return (
     <div className="home">
       <h1 className="heading">Ramen Joy</h1>
+      <div className="logo">
+      <img src={Logo} alt='logo' width="200" height="250" />
+      </div>
       <h5 className="subheading">For the Love of Ramen!</h5>
       <div className="links">
         <ul>
-          <li>About</li>
-          <li>Restaurants</li>
-          <li>Dating</li>
-          <li>Recipes</li>
-          <li>Info</li>
-          <li>Contacts</li>
         </ul>
       </div>
     </div>
