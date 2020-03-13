@@ -6,13 +6,43 @@ const routes = require("./routes");
 const mongoose = require("mongoose"); 
 const PORT = process.env.PORT || 3001; 
 
+let cors = require('cors')
+let bodyParser = require('body-parser')
+// let dbConfig = require('./database/db')
 //Define middleware here 
+
+const api = require('./routes/api/user')
+
+app.use(cors());
+
+app.use('/public', express.static('public'));
+
+app.use('/api', api)
+
+app.use((req, res, next) => {
+  // Error goes via `next()` method
+  setImmediate(() => {
+      next(new Error('Something went wrong'));
+  });
+});
+
+app.use(function (err, req, res, next) {
+  console.error(err.message);
+  if (!err.statusCode) err.statusCode = 500;
+  res.status(err.statusCode).send(err.message);
+});
+
+
+
 app.use(express.urlencoded({ extended: true})); 
 app.use(express.json()); 
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build")); 
 }
+
+
+
 
 app.use(routes); 
 

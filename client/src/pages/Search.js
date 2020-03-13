@@ -24,7 +24,7 @@ const Search = () => {
     setSearchResults(data);
     console.log(searchResults); 
     // renderRestaurants(); 
-}
+  }
   function renderRestaurants(){
     {console.log(searchResults)};
     // const {businesse
