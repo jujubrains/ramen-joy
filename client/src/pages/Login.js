@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import axios from "axios"; 
 
-
-const Friends = () => {
+const Login = () => {
 
   const [username, setUserName] = useState();
   const [ password, setPassword] = useState(); 
@@ -50,4 +49,4 @@ const Friends = () => {
    );
 }
  
-export default Friends;
+export default Login;

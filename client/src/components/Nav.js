@@ -7,13 +7,12 @@ const Nav = () => {
     <div className="navBar">
     <ul className="navList">
       <Link to="/home">Home</Link>
-      <Link to="/about">About</Link>
       <Link to="/search">Restaurants</Link>
-      <Link to="/Friends">Friends</Link>
-      <Link to="/recipes">Recipes</Link>
+      <Link to="/friends">Friends</Link>
+      <Link to="/vids">Videos</Link>
       <Link to="/info">Info</Link>
       <Link to="/contact">Contact</Link>
-      <Link to="/Login">Login</Link>
+      <Link to="/login">Login</Link>
       </ul>
     </div>
     );

@@ -10,6 +10,7 @@ import Info from "./pages/Info";
 import Contact from "./pages/Contact"; 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import Vids from "./components/Vids";
 
 function App() {
   return (
@@ -23,15 +24,15 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
           <Route exact path="/search">
             <Search />
           </Route>
           <Route exact path="/recipes">
             <Recipes />
            </Route>
+           <Route exact path="/vids">
+            <Vids />
+            </Route>
            <Route exact path="/info">
             <Info />
           </Route>

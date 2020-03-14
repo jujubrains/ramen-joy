@@ -1,41 +1,35 @@
-.contact {
+.info {
   display: flex;
-  height: fit-content;
   height: 80vh;
   width: 100%;
-  margin: 0px 10px 0px 10px;
-  color: black;
-  font-size: xx-large;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
 }
 
-.list {
+.left {
   display: flex;
+  height: 100%;
+  width: 48%;
+  margin-left: 2%;
+  font-size: large;
   justify-content: center;
-    color: black;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  height: 100%;
+  width: 48%;
+  margin-right: 6%;
+text-align: center;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.listItem {
-  width: 60%;
-  margin: 10px 10px 10px 20px;
-  color: black;
-}
-
-.textContact {
-  width: 60%;
-}
 
 @media only screen and (max-width: 600px) {
-  .contact {
-    font-size: 16px;
-  }
-  
-  .textContactHead {
-    margin: 0px;
-    font-size: 20px;
+  .right {
+    font-size: 12px;
   }
 }
