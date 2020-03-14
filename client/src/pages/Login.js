@@ -3,7 +3,10 @@ import axios from "axios";
 import {Route, Redirect, PublicHomePage} from "react"; 
 import Friends from "./Friends"
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 const Login = () => {
 
   const [emailInput, setEmailInput] = useState();

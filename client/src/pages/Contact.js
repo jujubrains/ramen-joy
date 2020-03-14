@@ -3,14 +3,19 @@ import "../style/Contact.css";
 
 const Contact = () => {
   return (
-    <div className="contact">
-      <h4 className = "textContactHead">Contact Information</h4>
-      <ul className = "list">
-        <li className = "listItem">Juju</li>
-        <li className = "listItem">Sasha</li>
-        <li className = "listItem">Alex</li>
-        <li className = "listItem">Chris</li>
-      </ul>
+    <div className="info">
+      <div className="left">
+        <h1>Contact Info</h1>
+      </div>
+      <div className="right">
+        <p>
+         <h3>The Ramen Joy team:</h3>
+         <h4>Juju</h4>
+         <h4>Sasha</h4>
+         <h4>Alex</h4>
+         <h4>Chris</h4>
+        </p>
+      </div>
     </div>
   );
 };

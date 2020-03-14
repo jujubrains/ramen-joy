@@ -4,7 +4,7 @@ import MediaCard from "../components/Card";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import "../style/Search.css";
-import { getCurrentPosition} from "../utils/helperFunction"; 
+import { getCurrentPosition } from "../utils/helperFunction"; 
 
 const Search = () => {
   

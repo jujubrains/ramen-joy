@@ -26,14 +26,6 @@
   flex-direction: column;
 }
 
-a {
-  color: blue;
-}
-
-a:hover {
-  color: lightgrey;
-}
-
 @media only screen and (max-width: 600px) {
   .right {
     font-size: 12px;
