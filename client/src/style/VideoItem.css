@@ -1,0 +1,27 @@
+.video-item{
+    display: flex !important;
+    align-items: center !important;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.video-item.item img{
+    max-width: 280px;
+    margin-left: 65px;
+    align-items: center !important;
+}
+
+.embed {
+    margin-left: 35px;
+    align-items: center !important;
+}
+
+.ui.header {
+
+    align-items: center !important;
+}
+
+.ui.segment {
+    margin-left: 35px;
+    align-items: center !important;
+}

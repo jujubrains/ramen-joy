@@ -1,4 +1,6 @@
 .footerBar {
+  position: absolute;
+  bottom: 0;
   display: flex;
   height: 10vh;
   width: 100%;
@@ -6,8 +8,8 @@
   color: white;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 0px;
+  position: sticky;
+  top: 0;
 }
 
 .team {
