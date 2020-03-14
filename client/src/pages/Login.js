@@ -2,11 +2,9 @@ import React, {useState} from 'react';
 import axios from "axios"; 
 import {Route, Redirect, PublicHomePage} from "react"; 
 import Friends from "./Friends"
+import {useTodoContext} from "../utils/GlobalState";
 
-<<<<<<< HEAD
 
-=======
->>>>>>> master
 const Login = () => {
 
   const [emailInput, setEmailInput] = useState();
@@ -14,7 +12,9 @@ const Login = () => {
   const [loggedIn, setLoggedIn] = useState(); 
   
 
+  const [state, dispatch] = useTodoContext();
 
+  
   function handleInput(e){
     if(e.target.name === "login"){
       const email = e.target.value; 
@@ -35,28 +35,27 @@ const Login = () => {
     // console.log(userLogin); 
     const loginResponse = await axios.put("/api/user/login", userLogin); 
     console.log(loginResponse); 
+
     console.log(loginResponse.data.msg)
+
+    
     if(loginResponse.data.msg === "You are logged in."){
-      setLoggedIn(true);  
-      console.log(loggedIn); 
-    }
+      setLoggedIn(true)
+      localStorage.setItem("id", loginResponse.data.user._id);
+      console.log('loggen')
+      dispatch({
+        type:"loggedIn", 
+        id: loginResponse.data.user._id,
+        email: loginResponse.data.user.email,
+        loggedIn: true
+      })
+    } 
   }
-
-  function rederict(){
-    {console.log(loggedIn)};
-    return(
+  function loginForm(){
+    console.log('loginform')
+    return (
+      
       <div>
-        friends
-    {
-     <Redirect to="/Friends" />
-    }
-    </div>
-    )
-  }
-
-
-  return ( 
-    <div>
       <form onSubmit={handleLogin}>
         <p>Login</p>
         <input 
@@ -71,9 +70,28 @@ const Login = () => {
         />
         <button > Submit</button>
       </form>
+    </div>
+
+    )
+  }
+
+  function renderLoggedIn(){
+    {console.log(loggedIn)};
+    return(
+      <div>
+        you are logged in
+    
+    </div>
+    )
+  }
+
+  console.log(state); 
+  return ( 
+    <div>
+      {console.log(loggedIn)}
       {
         
-        loggedIn ? rederict() : "not loggen in"
+        loggedIn ? renderLoggedIn(): loginForm()
       }
     </div>
    );

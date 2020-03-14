@@ -11,38 +11,41 @@ import Contact from "./pages/Contact";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Vids from "./components/Vids";
+import { TodoProvider } from "./utils/GlobalState";
 
 function App() {
   return (
     <Router> 
       <div>
-        <Nav />
-        <Switch>
-          <Route exact path={["/","/home"]}>
-            <Home/>
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/search">
-            <Search />
-          </Route>
-          <Route exact path = "/friends">
-            <Friends />
-          </Route>
-          <Route exact path="/recipes">
-            <Recipes />
-           </Route>
-           <Route exact path="/vids">
-            <Vids />
+        <TodoProvider>
+          <Nav />
+          <Switch>
+            <Route exact path={["/","/home"]}>
+              <Home/>
             </Route>
-           <Route exact path="/info">
-            <Info />
-          </Route>
-          <Route exact path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/search">
+              <Search />
+            </Route>
+            <Route exact path = "/friends">
+              <Friends />
+            </Route>
+            <Route exact path="/recipes">
+              <Recipes />
+            </Route>
+            <Route exact path="/vids">
+              <Vids />
+              </Route>
+            <Route exact path="/info">
+              <Info />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+        </TodoProvider>
         <Footer />
       </div>
     </Router>
