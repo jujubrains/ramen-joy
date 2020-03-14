@@ -4,8 +4,10 @@ import MediaCard from "../components/Card";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import "../style/Search.css";
+import { getCurrentPosition} from "../utils/helperFunction"; 
 
 const Search = () => {
+  
   const [search, setSearch] = useState(); 
   const [searchResults, setSearchResults] = useState(); 
 
@@ -14,18 +16,38 @@ const Search = () => {
     setSearch(input); 
   }
 
-  async function handleSearch(e){
+  const fetchCoordinates = async (e) => {
     e.preventDefault();
+    // try {
+        const { coords } = await getCurrentPosition();
+        const { latitude, longitude } = coords;
+
+        // Handle coordinates
+    // } catch (error) {
+    //     // Handle error
+    //     console.error(error);
+    // }
+  // console.log(coords); 
+  handleSearch(latitude, longitude); 
+};
+
+  async function handleSearch(latitude, longitude){
+   
+    //e.preventDefault();
+    console.log(latitude, longitude); 
     console.log("sending search to api"); 
-    console.log(search); 
-    const response = await axios("/api/restaurant/yelp")
+    // console.log(search); 
+    const response = await axios.post(`/api/restaurant/yelp`,{
+      lat: latitude,
+      lng: longitude
+    });
     const {data} = response; 
     // console.log(data); 
     setSearchResults(data);
-    console.log(searchResults); 
-    // renderRestaurants(); 
+    console.log(searchResults);  
 }
-  function renderRestaurants(){
+
+function renderRestaurants(){
     {console.log(searchResults)};
     // const {businesse
     return( 
@@ -39,10 +61,9 @@ const Search = () => {
       </Grid>
     ) 
   }
-
   return ( 
     <div>
-      <form onSubmit={handleSearch}> 
+      <form onSubmit={fetchCoordinates}> 
         <h1>Search Restaurants</h1>
         <input 
           name="searchRestaurants"

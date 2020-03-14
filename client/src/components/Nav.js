@@ -13,6 +13,7 @@ const Nav = () => {
       <Link to="/recipes">Recipes</Link>
       <Link to="/info">Info</Link>
       <Link to="/contact">Contact</Link>
+      <Link to="/Login">Login</Link>
       </ul>
     </div>
     );

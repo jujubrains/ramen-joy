@@ -48,4 +48,7 @@ router.put("/logout", async (req, res) => {
 //   .get(userController.findAll)
 //   .post(userController.create); 
 
-module.exports = router; 
+
+
+
+module.exports = router;
