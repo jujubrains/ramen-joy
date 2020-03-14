@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
+import Logout from "./pages/Logout"
 import About from "./pages/About"
 import Search from "./pages/Search";
 import Friends from "./pages/Friends"; 
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/logout">
+              <Logout />
             </Route>
             <Route exact path="/search">
               <Search />

@@ -1,10 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react";
 
-const TodoContext = createContext({
-  id: "",
-  email: "",
-  loggedIn: false
-});
+const TodoContext = createContext();
+
 const { Provider } = TodoContext;
 
 function reducer(state, action) {
@@ -28,7 +25,11 @@ function reducer(state, action) {
 }
 
 function TodoProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer, []);
+  const [state, dispatch] = useReducer(reducer,{
+    id: "",
+    email: "",
+    loggedIn: false
+  } );
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
