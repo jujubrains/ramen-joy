@@ -6,14 +6,8 @@ const routes = require("./routes");
 const mongoose = require("mongoose"); 
 const PORT = process.env.PORT || 3001; 
 
-let cors = require('cors')
-let bodyParser = require('body-parser')
-// let dbConfig = require('./database/db')
-//Define middleware here 
-
 const api = require('./routes/api/user')
 
-app.use(cors());
 
 app.use('/public', express.static('public'));
 
@@ -53,14 +47,3 @@ app.listen(PORT, () => {
 
 
 
-// app.post("/api/user", async(req, res) => {
-//   const user = await User.create({
-//     name: req.body.name, 
-//   })
-//   res.json(user); 
-// })
-
-// app.get("/api/user", async(req, res) =>{
-//   const user = await User.find({}); 
-//   res.json(user); 
-// })

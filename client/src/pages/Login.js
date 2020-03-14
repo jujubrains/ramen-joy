@@ -89,8 +89,7 @@ const Login = () => {
   return ( 
     <div>
       {console.log(loggedIn)}
-      {
-        
+      {   
         loggedIn ? renderLoggedIn(): loginForm()
       }
     </div>
