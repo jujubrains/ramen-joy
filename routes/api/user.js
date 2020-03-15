@@ -3,6 +3,7 @@ const userController = require('../../controllers/userController');
 const User = require("../../models/user");
 
 router.get("/users", async (req, res) => {
+  console.log('getroute')
   const allUsers = await User.find({});
   res.json(allUsers);
 });
@@ -27,6 +28,7 @@ router.post("/register", async (req, res) => {
 })
 
 router.put("/login", async (req, res) => {
+  console.log(req.body); 
   const { email, password } = req.body;
   if (!email || !password) {
     return res.status(400).json({ msg: "Please enter all fields." });
@@ -44,9 +46,6 @@ router.put("/logout", async (req, res) => {
   user.login = false;
   res.json({ msg: "You are logged out.", user})
 })
-// router.route("/")
-//   .get(userController.findAll)
-//   .post(userController.create); 
 
 
 

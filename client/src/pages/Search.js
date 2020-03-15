@@ -18,16 +18,9 @@ const Search = () => {
 
   const fetchCoordinates = async (e) => {
     e.preventDefault();
-    // try {
-        const { coords } = await getCurrentPosition();
-        const { latitude, longitude } = coords;
+      const { coords } = await getCurrentPosition();
+      const { latitude, longitude } = coords;
 
-        // Handle coordinates
-    // } catch (error) {
-    //     // Handle error
-    //     console.error(error);
-    // }
-  // console.log(coords); 
   handleSearch(latitude, longitude); 
 };
 
