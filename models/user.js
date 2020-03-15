@@ -17,7 +17,13 @@ const UserSchema = new Schema({
   login: {
     type: Boolean,
     default: false
-  }
+  },
+  friends: [
+    {
+      type:Schema.Types.ObjectId,
+      ref: "User"
+    }
+  ]
 })
 
 const User = mongoose.model("User", UserSchema); 
