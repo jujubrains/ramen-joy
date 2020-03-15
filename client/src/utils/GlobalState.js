@@ -9,27 +9,41 @@ function reducer(state, action) {
   case "loggedIn":
     console.log(action)
     return  {
-      id: action.id,
-      email: action.email,
-      loggedIn: true
-     }
+      ...state, 
+      user: {
+        id: action.id,
+        email: action.email,
+        loggedIn: true
+      }
+    }
   case "loggedOut":
-    return [{
-      id: action.id,
-      email: action.email,
-      loggedIn: false
-    }];
+    return {
+      ...state, 
+      user:{
+        id: action.id,
+        email: action.email,
+        loggedIn: false
+      }
+    }
+  case "FRIENDS": 
+    return {
+      ...state, 
+      friends: action.payload
+    }
   default:
     return state;
   }
 }
 
 function TodoProvider({ value = [], ...props }) {
-  const [state, dispatch] = useReducer(reducer,{
-    id: "",
-    email: "",
-    loggedIn: false
-  } );
+  const [state, dispatch] = useReducer(reducer, {
+    user: {
+      id: "",
+      email: "",
+      loggedIn: false
+    },
+    friends: []
+  });
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
