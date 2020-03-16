@@ -54,7 +54,7 @@ function TodoProvider({ value = [], ...props }) {
       message: ""
     }
   }
-  );
+);
 
   return <Provider value={[state, dispatch]} {...props} />;
 }
