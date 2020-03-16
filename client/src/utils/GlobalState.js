@@ -30,6 +30,11 @@ function reducer(state, action) {
       ...state, 
       friends: action.payload
     }
+  case "RENDERFRIENDS":
+    return {
+      ...state, 
+      friends: [...state.friends,action.payload]
+    }
   default:
     return state;
   }
@@ -42,8 +47,14 @@ function TodoProvider({ value = [], ...props }) {
       email: "",
       loggedIn: false
     },
-    friends: []
-  });
+    friends: [],
+    messages: {
+      recieverId:"",
+      sendingId: "", 
+      message: ""
+    }
+  }
+  );
 
   return <Provider value={[state, dispatch]} {...props} />;
 }

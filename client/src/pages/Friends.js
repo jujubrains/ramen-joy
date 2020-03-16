@@ -3,7 +3,7 @@ import "../style/Friends.css";
 import {useTodoContext, useState} from "../utils/GlobalState";
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
-import MediaCard from "../components/Card";
+import FriendCard from "../components/FriendCard";
 
 
 
@@ -11,6 +11,10 @@ const Friends = () => {
 
   const [state, dispatch] = useTodoContext();
   
+  // function renderUserFriends(){
+  //   axios.get('api/user/')
+  // }
+
   useEffect(()=>{
     axios.get("api/user/users")
     .then(res =>{
@@ -21,7 +25,22 @@ const Friends = () => {
       })
     })
   },[])
-  console.log(state); 
+
+  const addFriend = friendId => e => {
+    console.log("adding the friend with id", friendId);
+    const friends = axios.post('/api/user/addriend', friendId);
+    console.log("adding friend")
+    // console.log(state.friends)
+    dispatch({
+      type: "RENDERFRIENDS", 
+      payload: friends
+    })
+    console.log(state); 
+    // renderUserFriends()
+  }
+
+
+  // console.log(state); 
 
 
   function renderFriends(){
@@ -31,14 +50,23 @@ const Friends = () => {
         <Grid item sm={6} xs={12} spacing={3}>
           {
             state.friends.map((friends) =>{
-              const {name} = friends; 
-              return <MediaCard name={name}/>
+              const {name, _id} = friends; 
+              return <FriendCard addFriend={ addFriend(_id) } name={ name } id={ _id }/>
             })
           }
         </Grid>
       </div>
     )
   }
+
+  function askToLogin(){
+    return (
+      <div>
+        Log in 
+      </div>
+    )
+  }
+
 
   return ( 
      <div className="friends">
@@ -51,7 +79,7 @@ const Friends = () => {
         </p>
       </div>
       <div>
-        {state.friends.length ? renderFriends(): "YOU HAVE NO FRIENDS LOSER"}
+        {state.user.loggedIn ? renderFriends(): askToLogin()}
       </div>
     </div>
   );
