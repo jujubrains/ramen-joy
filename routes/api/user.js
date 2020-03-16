@@ -5,6 +5,7 @@ router.get("/users", userController.findAllUsers);
 router.post("/register", userController.register);
 router.put("/login", userController.login);
 router.post("/addFriend", userController.addFriend);
+router.put("/logout", userController.logout);
 
 module.exports = router;
 
@@ -24,7 +25,7 @@ module.exports = router;
 // router.put("/logout", User.
 // //  async (req, res) => {
 // //   const { email } = req.body;
-// //   const user = await User.findOne({ email })
+// //   let user= await User.findOneAndUpdate({ email }, { login: false });
 // //   user.login = false;
 //   // res.json({ msg: "You are logged out.", user})
 // })
