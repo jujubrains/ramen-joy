@@ -8,8 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -19,18 +17,16 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MediaCard(props) {
-  const { imageUrl, name} = props; 
-
+export default function FriendCard(props) {
+  const { addFriend, name, _id } = props; 
   const classes = useStyles();
-
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={imageUrl}
+          // image={imageUrl}
           title="Contemplative Reptile"
         />
         <CardContent>
@@ -40,8 +36,8 @@ export default function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Add
+        <Button value={ _id } onClick={ addFriend } size="small" color="primary">
+          Add Friend
         </Button>
       </CardActions>
     </Card>

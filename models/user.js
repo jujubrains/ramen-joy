@@ -17,6 +17,9 @@ const UserSchema = new Schema({
   login: {
     type: Boolean,
     default: false
+  },
+  friends: {
+    type: Array
   }
 })
 
