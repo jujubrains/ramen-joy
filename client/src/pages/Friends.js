@@ -26,10 +26,16 @@ const Friends = () => {
     })
   },[])
 
-  const addFriend = friendId => e => {
+  const addFriend = friendId => async e => {
     console.log("adding the friend with id", friendId);
-    const friends = axios.post('/api/user/addriend', friendId);
-    console.log("adding friend")
+    const _id = localStorage.getItem('id')
+    const friend = {
+      _id, 
+      friendId
+    }
+
+    const friends = await axios.post('/api/user/addFriend', friend);
+    console.log(friends)
     // console.log(state.friends)
     dispatch({
       type: "RENDERFRIENDS", 

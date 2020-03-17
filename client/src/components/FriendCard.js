@@ -39,6 +39,8 @@ export default function FriendCard(props) {
         <Button value={ _id } onClick={ addFriend } size="small" color="primary">
           Add Friend
         </Button>
+        <Button>
+          </Button> 
       </CardActions>
     </Card>
   );
