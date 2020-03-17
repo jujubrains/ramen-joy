@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+@font-face {
+  font-family: 'dacasaregular';
+  src: url('../font/dacasa-webfont.woff2') format('woff2'),
+       url('../font/dacasa-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.row {
+  justify-content: center;
+}
+
+.row-rest {
+
+}
+
+.display-results {
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding: 0;
+}
+
+.heading {
+  font-family: 'dacasaregular', Arial, sans-serif;
+  text-align: center;
+  margin: 5%;
+  font-size: calc(23px + 1vw);
+  letter-spacing: 2px;
+}
+
+
+.restaurant {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  text-align: center;
+  border: 1px solid orange;
+  border-radius: 40px;
+  margin: 5% auto;
+  padding: 3%;
+}
+
+.restaurant p {
+  margin: 2%;
+}
+
+.rest-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.restaurant img {
+  width: 80%;
+  /* height: 50%; */
+  border-radius: 10px;
+}
+
+.category {
+  font-size: 17px;
+  border: none;
+  margin: 1%;
+}
+
+@media (min-width: 992px) { 
+  .restaurant {
+    width: 100%;
+    text-align: center;
+    border: 1px solid orange;
+    border-radius: 40px;
+    justify-content: space-evenly;
+    margin: 0% auto;
+    padding: 10%;
+  }
+}

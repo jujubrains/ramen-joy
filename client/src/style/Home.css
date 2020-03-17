@@ -1,61 +1,31 @@
-.home {
-  display: flex;
-  height: 80vh;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  background: white;
-  color: black;
-  font-size: xx-large;
-  flex-direction: column;
+@font-face {
+  font-family: 'dacasaregular';
+  src: url('../font/dacasa-webfont.woff2') format('woff2'),
+       url('../font/dacasa-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
-ul {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  margin-right: 20px;
-  flex-wrap: wrap;
+.wrapper {
+  font-family: 'dacasaregular', Arial, sans-serif;
+  text-align: center;
 }
 
-li {
-  font-size: initial;
+.name {
+  font-size: calc(45px + 5vw);
+  font-weight: normal;
+  margin-top: 5%;
+  margin-bottom: 0;
 }
 
-.heading {
-  display: flex;
-  height: 33%;
-  justify-content: center;
-  align-items: flex-end;
+.logo img {
+  width: calc(15% + 2vw);
 }
 
-.subheading {
-  display: flex;
-  height: 43%;
-  width: 90;
-  justify-content: center;
-  align-items: center;
+.slogan {
+  font-size: calc(20px + 2vw);
+  font-weight: normal;
+  letter-spacing: 2px;
 }
 
-.links {
-  display: flex;
-  height: 13%;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@media only screen and (max-width: 600px) {
-  li{
-    font-size: 16px;
-    margin: 10px;
-  }
-
-  .heading{
-    font-size: 50px;
-  }
-
-  .subheading{
-    font-size: 20px;
-  }
-}
