@@ -37,7 +37,7 @@ module.exports = {
     res.json({msg: "Friend Added", user})
   },
   login: async function (req, res) {
-    console.log(req.body); 
+    console.log("req", req.body); 
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ msg: "Please enter all fields." });
