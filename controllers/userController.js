@@ -10,8 +10,9 @@ module.exports = {
       .then(user => res.json(user))
   },
   findAllFriends: function(req,res){
+    console.log(req.params)
     db.User
-      .find({_id:req.params}, friends)
+      .find({_id:req.params.id}, "friends")
       .then(dbModel => res.json(dbModel))
   },
   create: function(req, res){
@@ -28,10 +29,10 @@ module.exports = {
   },
   addFriend: async (req, res) => {
     console.log('request body for addign friend', req.body); 
-    const { _id, friendId } = req.body; 
+    const { _id, friendId, name } = req.body; 
     console.log(_id); 
     // https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
-    const user = await User.findOneAndUpdate({ _id }, { $push: { friends: friendId } });
+    const user = await User.findOneAndUpdate({ _id }, { $push: { friends: friendId, name } });
     res.json({msg: "Friend Added", user})
   },
   login: async(req, res)=>{
