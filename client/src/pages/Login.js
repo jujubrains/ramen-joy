@@ -3,7 +3,8 @@ import axios from "axios";
 import {Route, Redirect, PublicHomePage} from "react"; 
 import Friends from "./Friends"
 import {useTodoContext} from "../utils/GlobalState";
-
+import Logo from "../images/ramen.png";
+import "../style/RegLog.css";
 
 const Login = () => {
 
@@ -54,24 +55,31 @@ const Login = () => {
   function loginForm(){
     console.log('loginform')
     return (
-      
-      <div>
-      <form onSubmit={handleLogin}>
-        <p>Login</p>
-        <input 
+     <div className="container form-container">
+     <div className="row form-row">
+       <div className="col register-form">
+       <form className="register-form" onSubmit={handleLogin}>
+         <input
+           onChange={handleInput}
            name="login"
            type="text"
-           onChange={handleInput}
-        />
-        <input
-         name="password"
-         type="text"
-         onChange={handleInput}
-        />
-        <button > Submit</button>
-      </form>
-    </div>
-
+           placeholder="username"
+           className="form-input"
+           />
+         <input
+           name="password"
+           type="text"
+           placeholder="password"
+           className="form-input"
+           />
+         <button className="form-btn">log in</button>
+       </form>
+       <div className="logo">
+          <img src={Logo}/>
+        </div>
+       </div>
+     </div>
+   </div>
     )
   }
 
