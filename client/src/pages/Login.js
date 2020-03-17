@@ -9,7 +9,7 @@ import "../style/RegLog.css";
 const Login = () => {
 
   const [emailInput, setEmailInput] = useState();
-  const [ password, setPassword] = useState(); 
+  const [password, setPassword] = useState(); 
   const [loggedIn, setLoggedIn] = useState(); 
   
 
@@ -29,12 +29,14 @@ const Login = () => {
 
   async function handleLogin(e){
     e.preventDefault()
+    console.log(e)
     const userLogin= {
+    
       email: emailInput, 
       password: password
     }
     // console.log(userLogin); 
-    const loginResponse = await axios.put("/api/user/login", userLogin); 
+    const loginResponse = await axios.post("/api/user/login", {email: "furry", password:"coconuts"}); 
     console.log(loginResponse); 
 
     console.log(loginResponse.data.msg)
@@ -67,6 +69,7 @@ const Login = () => {
            className="form-input"
            />
          <input
+           onChange={handleInput}
            name="password"
            type="text"
            placeholder="password"
