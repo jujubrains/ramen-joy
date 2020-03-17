@@ -36,9 +36,11 @@ export default function FriendCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button value={ _id } onClick={ addFriend } size="small" color="primary">
+        <Button value={ _id } onClick={()=> addFriend(_id, name) } size="small" color="primary">
           Add Friend
         </Button>
+        <Button>
+          </Button> 
       </CardActions>
     </Card>
   );
