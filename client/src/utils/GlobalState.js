@@ -7,7 +7,7 @@ const { Provider } = TodoContext;
 function reducer(state, action) {
   switch (action.type) {
   case "loggedIn":
-    console.log(action)
+    // console.log(action)
     return  {
       ...state, 
       user: {
@@ -40,6 +40,11 @@ function reducer(state, action) {
         ...state,
         users: action.payload
       }
+    case "MESSAGE": 
+      return {
+        ...state, 
+        use: action.payload
+      }
   default:
     return state;
   }
@@ -50,14 +55,14 @@ function TodoProvider({ value = [], ...props }) {
     user: {
       id: "",
       email: "",
-      loggedIn: false
+      loggedIn: false,
+      messages: [{
+        recieverId:"",
+        sendingId: "", 
+        messages: ""
+      }]
     },
     friends: [],
-    messages: {
-      recieverId:"",
-      sendingId: "", 
-      message: ""
-    },
     users: [
       {
         name:"",
