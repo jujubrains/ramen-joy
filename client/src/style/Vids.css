@@ -2,10 +2,11 @@
     display: flex !important;
     align-items: center important!;
     cursor: pointer;
+    font-family: 'Comfortaa', cursive;
 }
 
 .video-item.item img {
-    max-width: 200px;
+    max-width: 230px;
     align-items: left !important;
     margin-left: 25px;
     margin-bottom: 15px; 
