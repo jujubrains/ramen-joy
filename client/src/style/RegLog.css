@@ -16,7 +16,7 @@
 .register-form {
   font-family: 'Inter', sans-serif;
   display: flex;
-  width: 40%;
+  width: 80%;
   margin: 0 auto;
   flex-direction: column;
   justify-content: center;
@@ -25,19 +25,20 @@
 .form-input {
   width: 100%;
   margin: 1%;
-  padding: 2%;
+  padding: 4%;
   border: 1px solid orange;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .form-btn {
   font-family: 'Inter', sans-serif;
-  width: 30%;
+  padding: 1%;
+  width: 45%;
   margin: 5% auto;
   background-color: orange;
   border: 2px solid black;
   font-family: 'dacasaregular', Arial, sans-serif;
-  font-size: calc(16px + 1.5vw);
+  font-size: calc(24px + 1.5vw);
   letter-spacing: 3px;
   border-radius: 15px;
 }
@@ -53,6 +54,56 @@
 
 .logo img {
   display: block;
-  width: calc(10% + 2vw);
+  width: calc(15% + 2vw);
   margin: 1% auto;
+}
+
+@media (min-width: 992px) {
+  .form-container {
+    margin-top: 5%;
+  }
+  
+  .register-form {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    width: 40%;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .form-input {
+    width: 100%;
+    margin: 1%;
+    padding: 2%;
+    border: 1px solid orange;
+    border-radius: 10px;
+  }
+  
+  .form-btn {
+    font-family: 'Inter', sans-serif;
+    width: 35%;
+    margin: 5% auto;
+    background-color: orange;
+    border: 2px solid black;
+    font-family: 'dacasaregular', Arial, sans-serif;
+    font-size: calc(16px + 1.5vw);
+    letter-spacing: 3px;
+    border-radius: 15px;
+  }
+  
+  .form-btn:hover {
+    cursor: pointer;
+  }
+  
+  .form-btn:active {
+    outline: none;
+    transform: translateY(3px); 
+  }
+  
+  .logo img {
+    display: block;
+    width: calc(30% + 2vw);
+    margin: 1% auto;
+  }
 }
