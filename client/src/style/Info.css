@@ -1,4 +1,33 @@
-.info {
+@font-face {
+  font-family: 'dacasaregular';
+  src: url('../font/dacasa-webfont.woff2') format('woff2'),
+       url('../font/dacasa-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+.container {
+  margin-top: 2%;
+}
+
+.text {
+  font-family: 'Comfortaa', cursive;
+  padding: 3%;
+}
+
+.title {
+  text-align: center;
+  font-family: 'dacasaregular', Arial, sans-serif;
+  letter-spacing: 3px;
+}
+
+.facts {
+  font-family: 'Comfortaa', cursive;
+  list-style: none;
+}
+
+/* .info {
   display: flex;
   font-family: 'Comfortaa', cursive;
   height: 80vh;
@@ -32,4 +61,4 @@
   .right {
     font-size: 12px;
   }
-}
+} */
