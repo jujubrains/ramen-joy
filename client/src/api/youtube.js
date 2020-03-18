@@ -5,7 +5,7 @@ const KEY = 'AIzaSyDgZr6MP5tZVtNo6ocpimFYeTPp7wPkMPY';
 
 export const baseParams = {
     part: 'snippet',
-    maxResults: 5,
+    maxResults: 15,
     key: KEY
 };
 
