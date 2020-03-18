@@ -18,9 +18,9 @@ const UserSchema = new Schema({
     type: Boolean,
     default: false
   },
-  friends: {
-    type: Array
-  },
+  friends: [
+  this
+  ],
   messages:{
     type: Array
   }
@@ -28,4 +28,4 @@ const UserSchema = new Schema({
 
 const User = mongoose.model("User", UserSchema); 
 
-module.exports = User; 
+module.exports = User;

@@ -11,6 +11,7 @@ module.exports = {
     console.log(req.params)
     db.User
       .find({_id:req.params.id}, "friends")
+      .populate("friends")
       .then(dbModel => res.json(dbModel))
   },
   create: function(req, res){
@@ -33,7 +34,7 @@ module.exports = {
     console.log(_id); 
     // https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
 
-    const user = await User.findOneAndUpdate({ _id }, { $push: { {friends: friendId }} }, { new: true });
+    const user = await User.findOneAndUpdate({ _id }, { $push: { friends: friendId } }, { new: true });
 
     res.json({msg: "Friend Added", user})
   }, 
