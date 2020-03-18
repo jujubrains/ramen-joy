@@ -18,12 +18,12 @@ const UserSchema = new Schema({
     type: Boolean,
     default: false
   },
-  friends: [
-    {
-      type:Schema.Types.ObjectId,
-      ref: "User"
-    }
-  ]
+  friends: {
+    type: Array
+  },
+  messages:{
+    type: Array
+  }
 })
 
 const User = mongoose.model("User", UserSchema); 

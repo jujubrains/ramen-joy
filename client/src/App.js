@@ -13,6 +13,9 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Vids from "./components/Vids";
 import { TodoProvider } from "./utils/GlobalState";
+import Messages from "./pages/Messages"; 
+
+
 
 function App() {
   return (
@@ -47,6 +50,9 @@ function App() {
             </Route>
             <Route exact path="/register">
               <Register />
+            </Route>
+            <Route exact path="/messages">
+              <Messages />
             </Route>
           </Switch>
         </TodoProvider>
