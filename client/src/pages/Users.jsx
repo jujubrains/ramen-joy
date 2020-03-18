@@ -28,18 +28,17 @@ const Users = () => {
       })
     }
   },[])
-  const addFriend = (friendId, name) => async e => {
-    console.log("adding the friend with id", friendId, name);
+  const addFriend = async (friendId) => {
+    console.log("adding the friend with id", friendId);
     const _id = localStorage.getItem('id')
     const friend = {
       _id, 
-      friendId,
-      name
+      friendId
     }
     const friends = await axios.post('/api/user/addFriend', friend);
     dispatch({
       type: "RENDERFRIENDS", 
-      payload: friends
+      payload: friends.data
     })
     // console.log(state); 
     // renderUserFriends()
@@ -59,6 +58,7 @@ const Users = () => {
       </div>
     )
   }
+  console.log("this is the state,lets look at it together", state)
   return ( 
      <div className="friends">
       <div className="left">
