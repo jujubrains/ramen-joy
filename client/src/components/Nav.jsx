@@ -6,7 +6,7 @@ import {useTodoContext} from "../utils/GlobalState";
 
 const Nav = () => {
   const [state, dispatch] = useTodoContext();
-  console.log(state); 
+  // console.log(state); 
   return (
     <div className="nav-wrapper">
       <nav class="navbar navbar-expand-lg navbar-light">

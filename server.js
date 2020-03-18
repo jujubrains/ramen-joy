@@ -27,8 +27,6 @@ app.use(function (err, req, res, next) {
   res.status(err.statusCode).send(err.message);
 });
 
-
-
 if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build")); 
 }
@@ -39,8 +37,6 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/ramenDB",
   {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 )
-
-
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`)

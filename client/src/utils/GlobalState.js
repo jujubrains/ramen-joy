@@ -7,7 +7,7 @@ const { Provider } = TodoContext;
 function reducer(state, action) {
   switch (action.type) {
   case "loggedIn":
-    console.log(action)
+    // console.log(action)
     return  {
       ...state, 
       user: {

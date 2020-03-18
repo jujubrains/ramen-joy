@@ -6,6 +6,9 @@ router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.post("/addFriend", userController.addFriend);
 router.post("/logout", userController.logout);
+router.get("/findFriends", userController.findFriends);
+
+
 
 module.exports = router;
 
