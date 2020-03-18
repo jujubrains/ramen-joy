@@ -9,7 +9,7 @@ const Nav = () => {
   console.log(state); 
   return (
     <div>
-      <nav>
+      <nav className="lg-nav">
         <Link to="/home"><span>Home</span></Link>
         <Link to="/search"> <span>Restaurants</span></Link>
         <Link to="/friends"><span>Ramenuers</span></Link>
@@ -19,7 +19,7 @@ const Nav = () => {
         <Link to="/register"><span>Register</span></Link>
         {!localStorage.getItem("id")?  <Link to="/login"><span>Login</span></Link> : <Link to="/Logout"><span>Logout</span></Link>}
       </nav> 
-      {/* <nav className="navbar navbar-expand-lg navbar-light">
+      {/* <nav className="navbar navbar-expand-lg navbar-light sm-nav">
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
         </button>

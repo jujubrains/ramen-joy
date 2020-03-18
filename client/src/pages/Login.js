@@ -7,15 +7,12 @@ import Logo from "../images/ramen.png";
 import "../style/RegLog.css";
 
 const Login = () => {
-
   const [emailInput, setEmailInput] = useState();
   const [password, setPassword] = useState(); 
   const [loggedIn, setLoggedIn] = useState(); 
   
-
   const [state, dispatch] = useTodoContext();
 
-  
   function handleInput(e){
     if(e.target.name === "login"){
       const email = e.target.value; 
@@ -24,19 +21,17 @@ const Login = () => {
       const passwordInput = e.target.value; 
       setPassword(passwordInput); 
     }
-    
   }
 
   async function handleLogin(e){
     e.preventDefault()
     console.log(e)
     const userLogin= {
-    
       email: emailInput, 
       password: password
     }
     // console.log(userLogin); 
-    const loginResponse = await axios.post("/api/user/login", {email: "furry", password:"coconuts"}); 
+    const loginResponse = await axios.post("/api/user/login", userLogin); 
     console.log(loginResponse); 
 
     console.log(loginResponse.data.msg)
