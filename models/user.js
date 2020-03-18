@@ -20,6 +20,9 @@ const UserSchema = new Schema({
   },
   friends: {
     type: Array
+  },
+  messages:{
+    type: Array
   }
 })
 

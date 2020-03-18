@@ -7,7 +7,7 @@ import {useTodoContext} from "../utils/GlobalState";
 const Nav = () => {
 
   const [state, dispatch] = useTodoContext();
-  console.log(state); 
+  // console.log(state); 
   return (
     <div className="navBar">
     <ul className="navList">
@@ -17,6 +17,7 @@ const Nav = () => {
       <Link to="/vids">Videos</Link>
       <Link to="/info">Info</Link>
       <Link to="/contact">Contact</Link>
+      <Link to="/messages">Messages</Link>
       {!localStorage.getItem("id")?  <Link to="/login">Login</Link> : <Link to="/Logout">Logout</Link>
  }
       </ul>

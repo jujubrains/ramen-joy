@@ -6,6 +6,7 @@ router.post("/register", userController.register);
 router.put("/login", userController.login);
 router.post("/addFriend", userController.addFriend);
 router.get("/friends/:id", userController.findAllFriends); 
+router.post("/addMessage", userController.addMessage);
 
 module.exports = router;
 
