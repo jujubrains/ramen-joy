@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{ useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -17,29 +17,19 @@ const useStyles = makeStyles({
   },
 });
 
-export default function FriendCard(props) {
+export default function MessageCard(props) {
 
-  const { addFriend, name, id } = props; 
+
+  const [messageInput, setmessageInput] = useState(); 
+  const {  name, _id, addMessage } = props; 
   const classes = useStyles();
-  // const [ message, setMessage] = useState(false); 
 
-  // function addMessage(){
-  //   setMessage(true); 
-  // }
 
-  // function sendMessage(e){
-  //   e.preventDefault();
-  //   console.log("sendform")
-  // }
+  function handleUserInput(e){
+    e.preventDefault(); 
+    setmessageInput(e.target.value) 
+  }
 
-  // function addMessageForm(){
-  //   return (
-  //     <form onSubmit={sendMessage}>
-  //       <input type="text" /> 
-  //       <button>Submit</button> 
-  //     </form>
-  //   )
-  // }
 
   return (
     <Card className={classes.root}>
@@ -56,13 +46,13 @@ export default function FriendCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button value={id} onClick={()=> addFriend(id, name) } size="small" color="primary">
-          Add Friend
+        <form> 
+          <input type="text" onChange={handleUserInput}/> 
+          <Button value={ _id } onClick={()=> addMessage(_id, name, messageInput) } size="small" color="primary">
+          send message
         </Button>
+        </form>
       </CardActions>
     </Card>
   );
 }
-
-/* <Button onClick={addMessage()}>Add Message</Button>
-          {message ? addMessageForm : "no message"} */

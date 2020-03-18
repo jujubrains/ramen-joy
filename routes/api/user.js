@@ -5,6 +5,8 @@ router.get("/users", userController.findAllUsers);
 router.post("/register", userController.register);
 router.post("/login", userController.login);
 router.post("/addFriend", userController.addFriend);
+router.get("/friends/:id", userController.findAllFriends); 
+router.post("/addMessage", userController.addMessage);
 router.post("/logout", userController.logout);
 
 module.exports = router;

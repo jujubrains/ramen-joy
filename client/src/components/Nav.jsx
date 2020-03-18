@@ -44,7 +44,7 @@ const Nav = () => {
            <li class="nav-item">
            <Link to ="/login" class="nav-link" onClick={() => setMenuOpen(false)}>Login</Link></li> : 
             <li class="nav-item">
-            <Link to ="/home" class="nav-link" onClick={() => setMenuOpen(false)}>Logout</Link></li>}
+            <Link to ="/logout" class="nav-link" onClick={() => setMenuOpen(false)}>Logout</Link></li>}
           </ul>
         </div>
       </nav>
