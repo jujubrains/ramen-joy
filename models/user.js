@@ -19,13 +19,13 @@ const UserSchema = new Schema({
     default: false
   },
   friends: [
-    {
-      type:Schema.Types.ObjectId,
-      ref: "User"
-    }
-  ]
+  this
+  ],
+  messages:{
+    type: Array
+  }
 })
 
 const User = mongoose.model("User", UserSchema); 
 
-module.exports = User; 
+module.exports = User;

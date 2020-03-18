@@ -1,4 +1,5 @@
 import React from 'react';
+import "../style/VideoItem.css";
 
 class SearchBar extends React.Component{
     state = {term: ''};
@@ -20,7 +21,7 @@ class SearchBar extends React.Component{
         <div className="search-bar ui segment">
             <form onSubmit={this.onFormSubmit} className="ui form">
                 <div className="field">
-                <h1>Videos • How to Make Ramen</h1>
+                <h1>Ramen Videos</h1>
                 </div>
             </form>
         </div>

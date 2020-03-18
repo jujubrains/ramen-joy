@@ -5,6 +5,7 @@ import Login from "./pages/Login"
 import Logout from "./pages/Logout"
 import About from "./pages/About"
 import Search from "./pages/Search";
+import Users from "./pages/Users"; 
 import Friends from "./pages/Friends"; 
 import Recipes from "./pages/Recipes";
 import Info from "./pages/Info"; 
@@ -13,6 +14,9 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Vids from "./components/Vids";
 import { TodoProvider } from "./utils/GlobalState";
+import Messages from "./pages/Messages"; 
+
+
 
 function App() {
   return (
@@ -33,6 +37,9 @@ function App() {
             <Route exact path="/search">
               <Search />
             </Route>
+            <Route exact path="/users">
+              <Users />
+            </Route>
             <Route exact path = "/friends">
               <Friends />
             </Route>
@@ -47,6 +54,9 @@ function App() {
             </Route>
             <Route exact path="/register">
               <Register />
+            </Route>
+            <Route exact path="/messages">
+              <Messages />
             </Route>
           </Switch>
         </TodoProvider>

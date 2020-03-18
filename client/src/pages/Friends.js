@@ -28,11 +28,11 @@ const Friends = () => {
 
 
   useEffect(()=>{
-    console.log('fid friend')
+    // console.log('fid friend')
     const id = localStorage.getItem("id")
     axios.get(`api/user/users`)
     .then(res =>{
-      console.log(res);
+      // console.log(res);
       dispatch({
         type:"FRIENDS", 
         payload: res.data
@@ -44,9 +44,9 @@ const Friends = () => {
     const id = localStorage.getItem("id")
     axios.get(`api/user/friends/${id}`)
     .then(res =>{
-      console.log(res);
+      // console.log(res);
       dispatch({
-        type:"FRIENDS", 
+        type:"RENDERFRIENDS", 
         payload: res.data
       })
     })
@@ -54,22 +54,23 @@ const Friends = () => {
 
   useEffect(()=>{
     if(localStorage.getItem("id")){
-      console.log('local storage heres')
+      // console.log('local storage heres')
       dispatch({
         type:"loggedIn"
       })
     }
   },[])
 
-  const addFriend = (friendId, name) => async e => {
+  async function addFriend(friendId, name){
     console.log("adding the friend with id", friendId, name);
     const _id = localStorage.getItem('id')
+    console.log(friendId);
     const friend = {
       _id, 
       friendId,
       name
     }
-
+    console.log(friend)
     const friends = await axios.post('/api/user/addFriend', friend);
     dispatch({
       type: "RENDERFRIENDS", 
@@ -80,30 +81,30 @@ const Friends = () => {
   }
 
 
-  // console.log(state); 
-  async function findAllUsers(){
+  function findAllUsers(){
+    console.log('hit user true')
     setUsers(true); 
   }
 
-  async function findFriends(){
+  function findFriends(){
     setCurrentFriends({clicked: "clicked"})
   }
 
 
   function renderFriends(){
-    
+    console.log('renderfriends')
     return (state.friends.map((friend) =>{
-      // console.log(friends);
+      //console.log(friend);
       const [_id] = friend.friends
+      // console.log(friend.friends);
       // console.log(_id)
 
-      return <FriendCard id={ _id }/>
+      return <FriendCard id={_id} addFriend={addFriend}/>
     })
     )
   }
 
   function renderFriendsButtons(){
-    // console.log(state.friends); 
     return(
       <div>  
           <button onClick={findAllUsers}>Find Friends</button>
@@ -113,11 +114,11 @@ const Friends = () => {
   }
 
   function renderUsers(){
-    
+    console.log('render users hit')
     return (
     state.users.map((user) =>{
       const {name, email, _id} = user; 
-      return <FriendCard addFriend={addFriend } email={email} name={ name } id={ _id }/>
+      return <FriendCard addFriend={addFriend} email={email} name={ name } id={ _id }/>
      })
     )
   }
@@ -152,14 +153,3 @@ const Friends = () => {
 };
  
 export default Friends;
-
-
-
-   /* /* <Grid item sm={6} xs={12} spacing={3}>
-          {
-            state.friends.map((friends) =>{
-              const {name, _id} = friends; 
-              return <FriendCard addFriend={ addFriend(_id, name) } name={ name } id={ _id }/>
-            })
-          
-          } */ 
