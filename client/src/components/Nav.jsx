@@ -56,11 +56,10 @@ const Nav = () => {
              <a class="nav-link">Login</a>
            </li>
             </Link> : 
-            <Link to ="/logout">
-              <li class="nav-item">
-                <a class="nav-link">Logout</a>
-              </li>
-            </Link>}
+            <li class="nav-item"><Link to ="/logout" class="nav-link">
+              Logout
+            </Link></li>}
+            
           </ul>
         </div>
       </nav>
