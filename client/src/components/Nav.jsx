@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from "react-router-dom"; 
 import "../style/Nav.css";
 import {useTodoContext} from "../utils/GlobalState";
@@ -7,21 +7,16 @@ import {useTodoContext} from "../utils/GlobalState";
 const Nav = () => {
   const [state, dispatch] = useTodoContext();
   console.log(state); 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const handleMenuOpen = () => {
-    setMenuOpen(!menuOpen)
-    console.log("clicked")
-  }
   return (
     <div className="nav-wrapper">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <button class={menuOpen ? 'menu-opened' : 'menu-closed'} type="button" onClick={handleMenuOpen} >
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class={menuOpen ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'} id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <Link to ="/home">
-            <li class="nav-item" onClick={() => setMenuOpen(false)}>
+            <li class="nav-item">
               <a class="nav-link">Home</a>
             </li>
             </Link>
@@ -32,7 +27,7 @@ const Nav = () => {
             </Link>
             <Link to ="/users">
               <li class="nav-item">
-                <a class="nav-link">Rameneurs</a>
+                <a class="nav-link">Ramenuers</a>
               </li>
             </Link>
             <Link to ="/friends">
@@ -61,11 +56,10 @@ const Nav = () => {
              <a class="nav-link">Login</a>
            </li>
             </Link> : 
-            <Link to ="/logout">
-              <li class="nav-item">
-                <a class="nav-link">Logout</a>
-              </li>
-            </Link>}
+            <li class="nav-item"><Link to ="/logout" class="nav-link">
+              Logout
+            </Link></li>}
+            
           </ul>
         </div>
       </nav>
