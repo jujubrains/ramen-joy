@@ -33,7 +33,7 @@ function reducer(state, action) {
   case "RENDERFRIENDS":
     return {
       ...state, 
-      friends: [...state.friends,action.payload]
+      friends: [...state.friends, action.payload]
     }
     case "RENDERALLUSERS":
       return {
