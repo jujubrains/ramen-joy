@@ -47,23 +47,16 @@ nav {
   letter-spacing: 1px;
 }
 
-.nav-link {
+.nav-item {
   color: black;
   font-size: 30px;
   font-weight: normal;
   letter-spacing: 2px;
+  margin-right: 10%;
   border-bottom: 1px solid orange;
 }
 .navbar-light .navbar-nav .nav-link {
   color: black;
-}
-
-.menu-item{
-  color: black;
-  font-size: 30px;
-  font-weight: normal;
-  margin: 5%;
-  border-bottom: 1px solid orange;
 }
 
 @media (min-width: 992px) {
