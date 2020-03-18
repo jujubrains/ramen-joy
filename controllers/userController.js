@@ -57,6 +57,7 @@ module.exports = {
   },
   register: async function (req, res) {
    const { name, email, password } = req.body;
+   console.log('register test');
   if (!name || !email || !password) {
     return res.status(400).json({ msg: "Please enter all fields."});
   }
