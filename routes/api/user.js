@@ -3,11 +3,9 @@ const userController = require('../../controllers/userController');
 
 router.get("/users", userController.findAllUsers);
 router.post("/register", userController.register);
-router.put("/login", userController.login);
+router.post("/login", userController.login);
 router.post("/addFriend", userController.addFriend);
-router.get("/friends/:id", userController.findAllFriends); 
-router.put("/logout", userController.logout);
-
+router.post("/logout", userController.logout);
 
 module.exports = router;
 

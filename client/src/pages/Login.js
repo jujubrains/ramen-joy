@@ -3,18 +3,16 @@ import axios from "axios";
 import {Route, Redirect, PublicHomePage} from "react"; 
 import Friends from "./Friends"
 import {useTodoContext} from "../utils/GlobalState";
-
+import Logo from "../images/ramen.png";
+import "../style/RegLog.css";
 
 const Login = () => {
-
   const [emailInput, setEmailInput] = useState();
-  const [ password, setPassword] = useState(); 
+  const [password, setPassword] = useState(); 
   const [loggedIn, setLoggedIn] = useState(); 
   
-
   const [state, dispatch] = useTodoContext();
 
-  
   function handleInput(e){
     if(e.target.name === "login"){
       const email = e.target.value; 
@@ -23,17 +21,17 @@ const Login = () => {
       const passwordInput = e.target.value; 
       setPassword(passwordInput); 
     }
-    
   }
 
   async function handleLogin(e){
     e.preventDefault()
+    console.log(e)
     const userLogin= {
       email: emailInput, 
       password: password
     }
     // console.log(userLogin); 
-    const loginResponse = await axios.put("/api/user/login", userLogin); 
+    const loginResponse = await axios.post("/api/user/login", userLogin); 
     console.log(loginResponse); 
 
     console.log(loginResponse.data.msg)
@@ -54,24 +52,32 @@ const Login = () => {
   function loginForm(){
     console.log('loginform')
     return (
-      
-      <div>
-      <form onSubmit={handleLogin}>
-        <p>Login</p>
-        <input 
+     <div className="container form-container">
+     <div className="row form-row">
+       <div className="col register-form">
+       <form className="register-form" onSubmit={handleLogin}>
+         <input
+           onChange={handleInput}
            name="login"
            type="text"
+           placeholder="username"
+           className="form-input"
+           />
+         <input
            onChange={handleInput}
-        />
-        <input
-         name="password"
-         type="text"
-         onChange={handleInput}
-        />
-        <button > Submit</button>
-      </form>
-    </div>
-
+           name="password"
+           type="text"
+           placeholder="password"
+           className="form-input"
+           />
+         <button className="form-btn">log in</button>
+       </form>
+       <div className="logo">
+          <img src={Logo}/>
+        </div>
+       </div>
+     </div>
+   </div>
     )
   }
 

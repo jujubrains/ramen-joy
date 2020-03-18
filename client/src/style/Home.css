@@ -1,61 +1,65 @@
-.home {
+@font-face {
+  font-family: 'dacasaregular';
+  src: url('../font/dacasa-webfont.woff2') format('woff2'),
+       url('../font/dacasa-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/* .lg-nav {
+  display: none;
+} */
+
+.wrapper {
+  font-family: 'dacasaregular', Arial, sans-serif;
+  text-align: center;
+  height: 50%;
   display: flex;
-  height: 80vh;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  background: white;
-  color: black;
-  font-size: xx-large;
   flex-direction: column;
-}
-
-ul {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-  margin-right: 20px;
-  flex-wrap: wrap;
-}
-
-li {
-  font-size: initial;
-}
-
-.heading {
-  display: flex;
-  height: 33%;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.subheading {
-  display: flex;
-  height: 43%;
-  width: 90;
-  justify-content: center;
   align-items: center;
 }
 
-.links {
+.content-wrapper {
+  height: 70vh;
   display: flex;
-  height: 13%;
-  width: 100%;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
-@media only screen and (max-width: 600px) {
-  li{
-    font-size: 16px;
-    margin: 10px;
+.name {
+  font-size: calc(45px + 5vw);
+  letter-spacing: 2px;
+  font-weight: normal;
+  margin-top: 5%;
+  margin-bottom: 0;
+}
+
+.logo img {
+  width: calc(15% + 2vw);
+}
+
+.slogan {
+  font-size: calc(20px + 2vw);
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 992px) {
+  .sm-nav {
+    display: none;
+  }
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
   }
 
-  .heading{
-    font-size: 50px;
-  }
-
-  .subheading{
-    font-size: 20px;
+  .content-wrapper {
+    height: 70vh;
+    display: flex;
+    align-items: start;
+    margin-top: 3%;
+    justify-content: center;
   }
 }
+
