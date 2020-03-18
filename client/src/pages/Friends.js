@@ -14,20 +14,10 @@ const Friends = () => {
     {
       clicked: "notClicked"
   }); 
-  const [users, setUsers] = useState(false);
-  
-  useEffect(()=>{
-    axios("/api/user/users")
-    .then(res=>{
-      dispatch({
-        type:"RENDERALLUSERS", 
-        payload: res.data
-      })
-    })
-  },[])
 
 
   useEffect(()=>{
+<<<<<<< HEAD
     // console.log('fid friend')
     const id = localStorage.getItem("id")
     axios.get(`api/user/users`)
@@ -41,8 +31,10 @@ const Friends = () => {
   },[])
 
   useEffect(()=>{
+=======
+>>>>>>> master
     const id = localStorage.getItem("id")
-    axios.get(`api/user/friends/${id}`)
+    axios(`/api/user/findFriends/${id}`)
     .then(res =>{
       // console.log(res);
       dispatch({
@@ -61,6 +53,7 @@ const Friends = () => {
     }
   },[])
 
+<<<<<<< HEAD
   async function addFriend(friendId, name){
     console.log("adding the friend with id", friendId, name);
     const _id = localStorage.getItem('id')
@@ -89,12 +82,27 @@ const Friends = () => {
   function findFriends(){
     setCurrentFriends({clicked: "clicked"})
   }
+=======
+
+  function askToLogin(){
+    return (
+      <div>
+        Log in 
+      </div>
+    )
+  }
+
+>>>>>>> master
 
 
   function renderFriends(){
     console.log('renderfriends')
     return (state.friends.map((friend) =>{
+<<<<<<< HEAD
       //console.log(friend);
+=======
+      console.log(friend);
+>>>>>>> master
       const [_id] = friend.friends
       // console.log(friend.friends);
       // console.log(_id)
@@ -104,6 +112,7 @@ const Friends = () => {
     )
   }
 
+<<<<<<< HEAD
   function renderFriendsButtons(){
     return(
       <div>  
@@ -132,6 +141,8 @@ const Friends = () => {
     )
   }
 
+=======
+>>>>>>> master
 
   return ( 
      <div className="friends">
@@ -144,12 +155,14 @@ const Friends = () => {
         </p>
       </div>
       <div>
-        {state.user.loggedIn ? renderFriendsButtons(): askToLogin()}
-        {currentFriends.clicked==="clicked" ? renderFriends(): "no friends to be found" }
-        {users ? renderUsers(): "no users to find"}
+        {state.user.loggedIn ? renderFriends(): askToLogin()}
       </div>
     </div>
   );
 };
  
 export default Friends;
+<<<<<<< HEAD
+=======
+
+>>>>>>> master

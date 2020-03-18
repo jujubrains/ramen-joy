@@ -8,6 +8,9 @@ router.post("/addFriend", userController.addFriend);
 router.get("/friends/:id", userController.findAllFriends); 
 router.post("/addMessage", userController.addMessage);
 router.post("/logout", userController.logout);
+router.get("/findFriends", userController.findFriends);
+
+
 
 module.exports = router;
 

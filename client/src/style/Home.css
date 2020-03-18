@@ -7,9 +7,7 @@
 
 }
 
-/* .lg-nav {
-  display: none;
-} */
+
 
 .wrapper {
   font-family: 'dacasaregular', Arial, sans-serif;
@@ -29,14 +27,15 @@
 
 .name {
   font-size: calc(45px + 5vw);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: normal;
   margin-top: 5%;
   margin-bottom: 0;
 }
 
 .logo img {
-  width: calc(15% + 2vw);
+  width: calc(30% + 2vw);
+  width: 80%;
 }
 
 .slogan {
@@ -46,9 +45,10 @@
 }
 
 @media (min-width: 992px) {
-  .sm-nav {
-    display: none;
+  .logo img {
+    width: calc(35% + 2vw);
   }
+  
   .navbar-expand-lg .navbar-nav {
     flex-direction: row;
     justify-content: space-around;

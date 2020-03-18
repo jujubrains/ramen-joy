@@ -13,7 +13,12 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Vids from "./components/Vids";
 import { TodoProvider } from "./utils/GlobalState";
+<<<<<<< HEAD
 import Messages from "./pages/Messages"; 
+=======
+import Users from "./pages/Users.jsx";
+
+>>>>>>> master
 
 
 
@@ -29,6 +34,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login />
+            </Route>
+            <Route exact path="/users">
+              <Users />
             </Route>
             <Route exact path="/logout">
               <Logout />
