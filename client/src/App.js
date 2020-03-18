@@ -8,7 +8,7 @@ import Search from "./pages/Search";
 import Friends from "./pages/Friends"; 
 import Recipes from "./pages/Recipes";
 import Info from "./pages/Info"; 
-import Contact from "./pages/Contact"; 
+import Register from "./pages/Register"; 
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import Vids from "./components/Vids";
@@ -48,15 +48,15 @@ function App() {
             <Route exact path="/info">
               <Info />
             </Route>
-            <Route exact path="/contact">
-              <Contact />
+            <Route exact path="/register">
+              <Register />
             </Route>
             <Route exact path="/messages">
               <Messages />
             </Route>
           </Switch>
         </TodoProvider>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

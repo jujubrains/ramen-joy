@@ -8,6 +8,8 @@ const PORT = process.env.PORT || 3001;
 
 const api = require('./routes/api/user')
 
+app.use(express.urlencoded({ extended: true})); 
+app.use(express.json()); 
 
 api.use((req, res, next) => {
   console.log('server router has been hit', req.originalUrl);
@@ -25,8 +27,7 @@ app.use(function (err, req, res, next) {
   res.status(err.statusCode).send(err.message);
 });
 
-app.use(express.urlencoded({ extended: true})); 
-app.use(express.json()); 
+
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build")); 

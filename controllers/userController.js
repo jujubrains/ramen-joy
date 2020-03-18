@@ -1,10 +1,8 @@
 const db = require("../models"); 
 const User = require("../models/user");
 
-
-
 module.exports = {
-  findAllUsers: function(req, res){
+  findAllUsers: function (req, res) {
     db.User 
       .find(req.query)
       .then(user => res.json(user))
@@ -16,17 +14,19 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
   },
   create: function(req, res){
+
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findOneAndUpdate:function(req,res){
+  findOneAndUpdate:function (req,res) {
     db.User
       .findOneAndUpdate({_id: req.body._id}, {$push: {"friends": req.body.friendId }})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
   addFriend: async (req, res) => {
     console.log('request body for addign friend', req.body); 
     const { _id, friendId, name } = req.body; 
@@ -46,20 +46,28 @@ module.exports = {
       .findOneAndUpdate({idReciever}, {$push:{ messages: idSender,receiverName,messageInput }});
       res.json({msg:"added message", user})
   },
-  login: async(req, res)=>{
-    console.log(req.body); 
+  login: async function (req, res) {
+    console.log("req", req.body); 
     const { email, password } = req.body;
     if (!email || !password) {
       return res.status(400).json({ msg: "Please enter all fields." });
     }
-    const user = await User.findOne({ email })
+    let user = await User.findOne({ email })
     if (!user) return res.status(400).json({ msg: "User does not exist." });
     if (user.password!== password) return res.status(400).json({ msg: "Invalid password."});
+    user= await User.findOneAndUpdate({ email }, { login: true });
     user.login = true;
     res.json({ msg: "You are logged in.", user});
   },
-  register: async(req, res)=> {
+  logout: async function (req, res) {
+    const { email } = req.body;
+    let user= await User.findOneAndUpdate({ email }, { login: false });
+    user.login = false;
+    res.json({ msg: "You are logged out.", user})
+  },
+  register: async function (req, res) {
    const { name, email, password } = req.body;
+   console.log('register test');
   if (!name || !email || !password) {
     return res.status(400).json({ msg: "Please enter all fields."});
   }

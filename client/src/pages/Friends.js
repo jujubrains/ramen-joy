@@ -46,7 +46,7 @@ const Friends = () => {
     .then(res =>{
       // console.log(res);
       dispatch({
-        type:"FRIENDS", 
+        type:"RENDERFRIENDS", 
         payload: res.data
       })
     })
@@ -153,14 +153,3 @@ const Friends = () => {
 };
  
 export default Friends;
-
-
-
-   /* /* <Grid item sm={6} xs={12} spacing={3}>
-          {
-            state.friends.map((friends) =>{
-              const {name, _id} = friends; 
-              return <FriendCard addFriend={ addFriend(_id, name) } name={ name } id={ _id }/>
-            })
-          
-          } */ 

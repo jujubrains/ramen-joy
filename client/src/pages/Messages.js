@@ -18,15 +18,27 @@ const Messages = () => {
     userId = localStorage.getItem('id'); 
   }
 
-  useEffect(()=>{
-    axios("api/user/addFriend",message)
-    .then(res =>{
-      console.log(res)
-    })
+  // useEffect(()=>{
+  //   axios("api/user/addFriend",message)
+  //   .then(res =>{
+  //     console.log(res)
+  //   })
 
-    dispatch({
-      type: "MESSAGE",
-      payload: message
+  //   dispatch({
+  //     type: "MESSAGE",
+  //     payload: message
+  //   })
+  // },[])
+
+  useEffect(()=>{
+    const id = localStorage.getItem("id")
+    axios.get(`api/user/friends/${id}`)
+    .then(res =>{
+      console.log(res.data)
+      dispatch({
+        type:"FRIENDS", 
+        payload: res.data
+      })
     })
   },[])
 
@@ -53,27 +65,14 @@ const Messages = () => {
     )
   }
 
-  useEffect(()=>{
-    const id = localStorage.getItem("id")
-    axios.get(`api/user/friends/${id}`)
-    .then(res =>{
-      console.log(res);
-      dispatch({
-        type:"FRIENDS", 
-        payload: res.data
-      })
-    })
-    console.log(state)
-    console.log(state.friends)
-  },[])
-
   function renderMessagesCard(){
     console.log('renderfriends')
+    console.log(state.friends); 
     return (state.friends.map((friend) =>{
-      // console.log(friend);
+      console.log(friend);
       const [_id] = friend.friends
-      // console.log(friend.friends);
-      // console.log(_id)
+      console.log(friend.friends);
+       console.log(_id)
 
       return <Message id={ _id } addMessage={addMessage}/>
     })
