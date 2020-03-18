@@ -10,7 +10,7 @@ const UserSeeds = [
   {
     name: "alex",
     email: "alexu",
-    password: "bigBlackBooties"
+    password: "pimp"
     
   },
   {
