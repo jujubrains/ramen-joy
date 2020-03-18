@@ -4,6 +4,10 @@ import axios from "axios";
 import Logo from "../images/ramen.png";
 import Axios from "axios";
 
+const logoSize = {
+  width: "calc(15% + 2vw)"
+};
+
 const Contact = () => {
   const [usernameInput, setUsername] = useState();
   const [emailInput, setEmail] = useState();
@@ -62,7 +66,7 @@ const Contact = () => {
           <button className="form-btn">Submit</button>
         </form>
         <div className="logo">
-          <img src={Logo}/>
+          <img src={Logo} style={logoSize}/>
         </div>
         </div>
       </div>
