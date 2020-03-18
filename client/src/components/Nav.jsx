@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from "react-router-dom"; 
 import "../style/Nav.css";
 import {useTodoContext} from "../utils/GlobalState";
@@ -7,16 +7,21 @@ import {useTodoContext} from "../utils/GlobalState";
 const Nav = () => {
   const [state, dispatch] = useTodoContext();
   console.log(state); 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleMenuOpen = () => {
+    setMenuOpen(!menuOpen)
+    console.log("clicked")
+  }
   return (
     <div className="nav-wrapper">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class={menuOpen ? 'menu-opened' : 'menu-closed'} type="button" onClick={handleMenuOpen} >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class={menuOpen ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'} id="navbarNav">
           <ul class="navbar-nav">
             <Link to ="/home">
-            <li class="nav-item">
+            <li class="nav-item" onClick={() => setMenuOpen(false)}>
               <a class="nav-link">Home</a>
             </li>
             </Link>
@@ -27,7 +32,7 @@ const Nav = () => {
             </Link>
             <Link to ="/users">
               <li class="nav-item">
-                <a class="nav-link">Ramenuers</a>
+                <a class="nav-link">Rameneurs</a>
               </li>
             </Link>
             <Link to ="/friends">
