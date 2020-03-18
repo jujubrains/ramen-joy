@@ -100,10 +100,5 @@
     outline: none;
     transform: translateY(3px); 
   }
-  
-  .logo img {
-    display: block;
-    width: calc(30% + 2vw);
-    margin: 1% auto;
-  }
+
 }
