@@ -1,3 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');
+
+@font-face {
+  font-family: 'dacasaregular';
+  src: url('../font/dacasa-webfont.woff2') format('woff2'),
+       url('../font/dacasa-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.field {
+  font-family: 'dacasaregular', Arial, sans-serif;
+  font-size: calc(23px + 1vw);
+  letter-spacing: 2px;
+}
+
+
 .video-item {
     display: flex !important;
     font-family: 'Comfortaa', cursive;
@@ -20,13 +37,14 @@
 
 .ui.header {
 	font-family: 'Comfortaa', cursive;
+	
     align-items: center !important;
 }
 
 .ui.segment {
-	margin-top: 55px;
+	margin-top: 45px;
 	margin-bottom: 15px;
-    margin-left: 125px;
+    margin-left: 145px;
     font-family: 'Comfortaa', cursive;
     align-items: center !important;
 }

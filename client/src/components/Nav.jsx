@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../style/Nav.css";
 import {useTodoContext} from "../utils/GlobalState";
 
-
 const Nav = () => {
   const [state, dispatch] = useTodoContext();
   console.log(state);
