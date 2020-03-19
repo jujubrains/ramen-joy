@@ -9,14 +9,15 @@
 .logout-btn {
   font-family: 'Inter', sans-serif;
   padding: 0;
-  width: 13%;
-  margin: 15% 43%;
+  width: 27%;
+  margin: 45% 38%;
   background-color: orange;
   border: 2px solid black;
   font-family: 'dacasaregular', Arial, sans-serif;
   font-size: calc(14px + 1.5vw);
   letter-spacing: 3px;
   border-radius: 15px;
+  padding: 2%;
 }
 
 .logout-btn:hover {
@@ -33,4 +34,19 @@
   font-size: calc(14px + 1.5vw);
   letter-spacing: 2px;
   margin: 10% 36%;
+}
+
+@media (min-width: 992px) {
+  .logout-btn {
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    width: 13%;
+    margin: 15% 43%;
+    background-color: orange;
+    border: 2px solid black;
+    font-family: 'dacasaregular', Arial, sans-serif;
+    font-size: calc(14px + 1.5vw);
+    letter-spacing: 3px;
+    border-radius: 15px;
+  }
 }
