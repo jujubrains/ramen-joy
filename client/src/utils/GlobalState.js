@@ -54,7 +54,8 @@ function TodoProvider({ value = [], ...props }) {
       id: "",
       email: "",
       loggedIn: false,
-      messages: [{
+      image:"",
+        messages: [{
         recieverId:"",
         sendingId: "", 
         messages: ""
@@ -65,7 +66,8 @@ function TodoProvider({ value = [], ...props }) {
       {
         name:"",
         email:"",
-        id:""
+        id:"",
+        image:""
       }
     ]
   }

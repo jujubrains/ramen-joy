@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import "../style/Friends.css";
 import {useTodoContext} from "../utils/GlobalState";
 import axios from 'axios';
-import Grid from '@material-ui/core/Grid';
-import FriendCard from "../components/FriendCard";
-const Users = () => {
+import Card  from '../components/Card';
+import "../style/Card.css";
+
+const Users = (props) => {
   const [state, dispatch] = useTodoContext();
   const [currentFriends, setCurrentFriends] = useState(
     {
@@ -40,17 +40,25 @@ const Users = () => {
       type: "RENDERFRIENDS", 
       payload: friends.data
     })
-    // console.log(state); 
-    // renderUserFriends()
   }
-  function renderUsers(){
+
+function renderUsers() {
+  const splitArray = props.chunk(state.users, 3);
+  return splitArray.map((row, key) => {
     return (
-    state.users.map((user) =>{
-      const {name, email, _id} = user; 
-      return <FriendCard addFriend={addFriend } email={email} name={ name } id={ _id }/>
-     })
-    )
-  }
+      <div className="row rest-row" key={key}>
+        {row.map((user, i) => {
+          return (
+            <div className="col-xs-12 col-lg-3" key={i}>
+              <Card key={i} user={user} addFriend={addFriend}type="user"/>
+            </div>
+          );
+        })}
+      </div>
+    );
+  })
+}
+
   function askToLogin(){
     return (
       <div>
@@ -60,18 +68,10 @@ const Users = () => {
   }
   console.log("this is the state,lets look at it together", state)
   return ( 
-     <div className="friends">
-      <div className="left">
-        <h1>Ramen Friends</h1>
-      </div>
-      <div className="right">
-        <p>
-         Ramen Joy is an app for lovers of ramen. The app provides information on ramen, how to make ramen, where to find the best ramen in your area and who to eat it with.
-        </p>
-      </div>
+     <div>
       <div>
         {state.user.loggedIn ? renderUsers(): askToLogin()}
-        {users ? renderUsers(): "no users to find"}
+        {users ? renderUsers(): ""}
       </div>
     </div>
   );

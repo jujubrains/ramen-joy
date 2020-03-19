@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import "../style/Friends.css";
 import {useTodoContext} from "../utils/GlobalState";
 import axios from 'axios';
-import Grid from '@material-ui/core/Grid';
-import FriendCard from "../components/FriendCard";
-const Friends = () => {
+import Card from "../components/Card";
+import "../style/Card.css";
+
+const Friends = (props) => {
   const [state, dispatch] = useTodoContext();
   const [currentFriends, setCurrentFriends] = useState(
     {
@@ -45,11 +46,21 @@ const Friends = () => {
     })
     console.log(state); 
   }
-  function renderFriends(){ 
-    console.log(state)
-    return state.friends.map(person=>{
-      const {name} = person
-      return <FriendCard name={name} addFriend={addFriend}/>
+  
+  function renderFriends() {
+    const splitArray = props.chunk(state.friends, 3);
+    return splitArray.map((row, key) => {
+      return (
+        <div className="row rest-row" key={key}>
+          {row.map((friend, i) => {
+            return (
+              <div className="col-xs-12 col-lg-3" key={i}>
+                <Card key={i} friend={friend} type="friend"/>
+              </div>
+            );
+          })}
+        </div>
+      );
     })
   }
   function askToLogin(){
@@ -61,14 +72,6 @@ const Friends = () => {
   }
   return ( 
      <div className="friends">
-      <div className="left">
-        <h1>Ramen Friends</h1>
-      </div>
-      <div className="right">
-        <p>
-         Ramen Joy is an app for lovers of ramen. The app provides information on ramen, how to make ramen, where to find the best ramen in your area and who to eat it with.
-        </p>
-      </div>
       <div>
         {state.user.loggedIn? renderFriends(): askToLogin()}
       </div>

@@ -64,7 +64,7 @@ module.exports = {
     res.json({ msg: "You are logged out.", user})
   },
   register: async function (req, res) {
-   const { name, email, password } = req.body;
+   const { name, email, password, image } = req.body;
    console.log('register test');
   if (!name || !email || !password) {
     return res.status(400).json({ msg: "Please enter all fields."});
@@ -77,7 +77,8 @@ module.exports = {
   const newUser = await User.create({
     name,
     email,
-    password
+    password,
+    image
   });
   res.json({ msg: "You are now registered", newUser})
   console.log(newUser)

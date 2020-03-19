@@ -16,6 +16,15 @@ import Vids from "./components/Vids";
 import { TodoProvider } from "./utils/GlobalState";
 import Messages from "./pages/Messages"; 
 
+const chunkArray = (arr, chunkCount) => {
+  let chunks = [],
+    i,
+    j;
+  for (i = 0, j = arr.length; i < j; i += chunkCount) {
+    chunks.push(arr.slice(i, i + chunkCount));
+  }
+  return chunks;
+};
 
 
 function App() {
@@ -35,13 +44,13 @@ function App() {
               <Logout />
             </Route>
             <Route exact path="/search">
-              <Search />
+              <Search chunk={chunkArray}/>
             </Route>
             <Route exact path="/users">
-              <Users />
+              <Users chunk={chunkArray}/>
             </Route>
             <Route exact path = "/friends">
-              <Friends />
+              <Friends chunk={chunkArray}/>
             </Route>
             <Route exact path="/recipes">
               <Recipes />
