@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="content-wrapper">
       <div className="wrapper">
-        <h1 className="name">Ramen Joy</h1>
+        <h1 className="brand-name">Ramen Joy</h1>
         <div className="logo">
           <img src={Logo} style={logoSize}/>
         </div>

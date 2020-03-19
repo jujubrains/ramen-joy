@@ -1,7 +1,6 @@
 import React from 'react';
 import {useTodoContext} from "../utils/GlobalState";
-
-
+import "../style/Message.css";
 
 const Logout = () => {
 
@@ -23,7 +22,7 @@ const Logout = () => {
   }
   return (
     <div>
-      <button onClick={handleSubmit}>Logout</button>
+      <button onClick={handleSubmit} className="logout-btn">Logout</button>
     </div>
     );
 }

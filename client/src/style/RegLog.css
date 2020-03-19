@@ -9,15 +9,11 @@
 
 }
 
-.form-container {
-  margin-top: 5%;
-}
-
 .register-form {
   font-family: 'Inter', sans-serif;
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 20% auto;
   flex-direction: column;
   justify-content: center;
 }
@@ -67,7 +63,7 @@
     font-family: 'Inter', sans-serif;
     display: flex;
     width: 40%;
-    margin: 0 auto;
+    margin: 1% auto;
     flex-direction: column;
     justify-content: center;
   }

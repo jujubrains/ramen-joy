@@ -7,8 +7,6 @@
 
 }
 
-
-
 .wrapper {
   font-family: 'dacasaregular', Arial, sans-serif;
   text-align: center;
@@ -25,7 +23,7 @@
   justify-content: center;
 }
 
-.name {
+.brand-name {
   font-size: calc(45px + 5vw);
   letter-spacing: 3px;
   font-weight: normal;

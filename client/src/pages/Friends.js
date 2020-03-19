@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import "../style/Friends.css";
 import {useTodoContext} from "../utils/GlobalState";
 import axios from 'axios';
 import Card from "../components/Card";
 import "../style/Card.css";
+import "../style/Message.css";
 
 const Friends = (props) => {
   const [state, dispatch] = useTodoContext();
@@ -65,8 +65,8 @@ const Friends = (props) => {
   }
   function askToLogin(){
     return (
-      <div>
-        Log in 
+      <div className="msg">
+        Please log in to see others ramen lovers and make friends!
       </div>
     )
   }

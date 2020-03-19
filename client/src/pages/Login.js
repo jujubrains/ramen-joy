@@ -5,6 +5,7 @@ import Friends from "./Friends"
 import {useTodoContext} from "../utils/GlobalState";
 import Logo from "../images/ramen.png";
 import "../style/RegLog.css";
+import "../style/Message.css";
 
 const Login = () => {
   const [emailInput, setEmailInput] = useState();
@@ -84,8 +85,8 @@ const Login = () => {
   function renderLoggedIn(){
     {console.log(loggedIn)};
     return(
-      <div>
-        you are logged in
+      <div className="msg">
+        You are now logged in ! 
     </div>
     )
   }
