@@ -30,28 +30,24 @@ const Friends = () => {
         type:"loggedIn"
       })
     }
+    console.log(state); 
   },[])
   async function addFriend(friendId, name){
-    // console.log("adding the friend with id", friendId, name);
     const _id = localStorage.getItem('id')
-    // console.log(friendId);
     const friend = {
       _id, 
       friendId,
-      name
     }
-    // console.log(friend)
     const friends = await axios.post('/api/user/addFriend', friend);
     dispatch({
       type: "RENDERFRIENDS", 
       payload: friends
     })
-    // console.log(state); 
-    // renderUserFriends()
+    console.log(state); 
   }
   function renderFriends(){ 
+    console.log(state)
     return state.friends.map(person=>{
-      console.log(person)
       const {name} = person
       return <FriendCard name={name} addFriend={addFriend}/>
     })

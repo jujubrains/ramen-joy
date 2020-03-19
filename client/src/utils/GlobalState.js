@@ -1,9 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react";
-
 const TodoContext = createContext();
-
 const { Provider } = TodoContext;
-
 function reducer(state, action) {
   switch (action.type) {
   case "loggedIn":
@@ -25,15 +22,15 @@ function reducer(state, action) {
         loggedIn: false
       }
     }
-  case "FRIENDS": 
+  case "ADDFRIENDS": 
     return {
       ...state, 
-      friends: action.payload
+      friends:[...state.friends, action.payload]
     }
   case "RENDERFRIENDS":
     return {
       ...state, 
-      friends: [...state.friends, action.payload]
+      friends:  action.payload
     }
     case "RENDERALLUSERS":
       return {
@@ -43,13 +40,14 @@ function reducer(state, action) {
     case "MESSAGE": 
       return {
         ...state, 
-        use: action.payload
+        user: {
+          messages: action.payload
       }
+    }
   default:
     return state;
   }
 }
-
 function TodoProvider({ value = [], ...props }) {
   const [state, dispatch] = useReducer(reducer, {
     user: {
@@ -72,12 +70,9 @@ function TodoProvider({ value = [], ...props }) {
     ]
   }
 );
-
   return <Provider value={[state, dispatch]} {...props} />;
 }
-
 function useTodoContext() {
   return useContext(TodoContext);
 }
-
 export { TodoProvider, useTodoContext };
