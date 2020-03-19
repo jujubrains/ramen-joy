@@ -2,7 +2,6 @@ import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios"; 
 import { getCurrentPosition } from "../utils/helperFunction"; 
 import Card  from '../components/Card';
-import "../style/Search.css";
 import "../style/Card.css";
 
 const Search = (props) => {

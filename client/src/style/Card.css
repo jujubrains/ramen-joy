@@ -39,7 +39,7 @@
   border: 1px solid orange;
   border-radius: 40px;
   margin: 5% auto;
-  padding: 3%;
+  padding: 7%;
 }
 
 .user-card-body {
@@ -89,7 +89,7 @@
   font-weight: bold;
 }
 
-.restaurant img {
+.card-body img {
   
   width: 80%;
   

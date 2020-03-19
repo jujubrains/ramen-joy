@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import "../style/Friends.css";
 import {useTodoContext} from "../utils/GlobalState";
 import axios from 'axios';
 import Grid from '@material-ui/core/Grid';

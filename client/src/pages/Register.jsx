@@ -4,6 +4,7 @@ import axios from "axios";
 import Logo from "../images/ramen.png";
 import Axios from "axios";
 import {useTodoContext} from "../utils/GlobalState";
+import "../style/Message.css";
 
 const logoSize = {
   width: "calc(15% + 2vw)"
@@ -101,9 +102,7 @@ const Contact = () => {
   function renderRegistered(){
     {console.log(registered)};
     return(
-      <div>
-        you are now registered
-    </div>
+      <div className="msg">you are now registered !</div>
     )
   }
 
