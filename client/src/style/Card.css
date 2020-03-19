@@ -15,11 +15,10 @@
 
 .row-rest {
   font-family: 'Comfortaa', cursive;
-
 }
 
 .display-results {
-   font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', cursive;
   text-align: center;
   padding: 0;
 }
@@ -33,7 +32,7 @@
 }
 
 
-.restaurant {
+.card-body {
   font-family: 'Comfortaa', cursive;
   width: 100%;
   text-align: center;
@@ -43,11 +42,49 @@
   padding: 3%;
 }
 
+.user-card-body {
+  font-family: 'Comfortaa', cursive;
+  width: 100%;
+  text-align: center;
+  border: 1px solid orange;
+  border-radius: 20px;
+  margin: 5% auto;
+  padding: 3%;
+}
+
+.user-card-body img {
+  width: 80%;
+  margin: 2%;
+  border-radius: 10px;
+}
+
+.card-btn {
+  font-family: 'Inter', sans-serif;
+  padding: 1%;
+  width: 75%;
+  margin: 5% auto;
+  background-color: orange;
+  border: 2px solid black;
+  font-family: 'dacasaregular', Arial, sans-serif;
+  font-size: calc(10px + 1.5vw);
+  letter-spacing: 3px;
+  border-radius: 15px;
+}
+
+.fcard-btn:hover {
+  cursor: pointer;
+}
+
+.card-btn:active {
+  outline: none;
+  transform: translateY(3px); 
+}
+
 .restaurant p {
   margin: 2%;
 }
 
-.rest-name {
+.name {
   font-size: 20px;
   font-weight: bold;
 }

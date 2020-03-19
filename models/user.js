@@ -23,6 +23,10 @@ const UserSchema = new Schema({
   ],
   messages:{
     type: Array
+  },
+  image: {
+    type: String,
+    default: "https://3q87le1gsko01ibim33e4wib-wpengine.netdna-ssl.com/wp-content/uploads/2016/12/Screen-Shot-2016-12-12-at-4.10.16-PM.png"
   }
 })
 

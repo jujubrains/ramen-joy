@@ -60,7 +60,7 @@ const Login = () => {
            onChange={handleInput}
            name="login"
            type="text"
-           placeholder="username"
+           placeholder="email"
            className="form-input"
            />
          <input
@@ -86,7 +86,6 @@ const Login = () => {
     return(
       <div>
         you are logged in
-    
     </div>
     )
   }

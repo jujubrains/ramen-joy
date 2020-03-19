@@ -1,11 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios"; 
 import { getCurrentPosition } from "../utils/helperFunction"; 
-import { RestaurantCard } from '../components/RestaurantCard';
+import Card  from '../components/Card';
 import "../style/Search.css";
-import "../style/Restaurants.css";
+import "../style/Card.css";
 
-const Search = () => {
+const Search = (props) => {
  const [searchResults, setSearchResults] = useState(); 
 
   useEffect(()=>{
@@ -28,28 +28,17 @@ const Search = () => {
     setSearchResults(data);
 }
 
-const chunckArray = (arr, chunkCount) => {
-  let chunks = [],
-    i,
-    j;
-  for (i = 0, j = arr.length; i < j; i += chunkCount) {
-    chunks.push(arr.slice(i, i + chunkCount));
-  }
-  return chunks;
-};
-
 const renderRestaurants = () => {
   const { businesses } = searchResults;
-  const splitArray = chunckArray(businesses, 3);
+  const splitArray = props.chunk(businesses, 3);
   console.log(splitArray)
   return splitArray.map((row, key) => {
     return (
       <div className="row rest-row" key={key}>
         {row.map((restaurant, i) => {
-          // console.log(pet)
           return (
             <div className="col-xs-12 col-lg-3" key={i}>
-              <RestaurantCard key={i} restaurant={restaurant} />
+              <Card key={i} restaurant={restaurant} type="restaurant"/>
             </div>
           );
         })}
