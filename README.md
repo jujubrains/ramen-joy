@@ -16,6 +16,49 @@ Alex is a student at a coding bootcamp! He spends 12+ hours per day in front of 
 Persona: ​LN
 LN loves having ramen with her bf, but her bf just turned vegan! She wants to be supportive so she is always looking for the next best vegan ramen recipe. Our app will provide her with many vegan ramen recipes to search through till she finds her favorite one!
 
+## Built With 
+
+•   NodeJS
+•   Javascript
+•   Express
+•   ReactJS
+•   MongoDB
+•   Mongoose
+•   NodeJS
+•   Axios
+
+
+## Getting Started
+
+To run on your local computer clone the SSH key to your local drive. Open with a terminal bash and run the following commands
+
+npm init -y
+
+npm install 
+
+This will download all the dependencies including axios, express, and react. Once installed hit the following command to run the application. 
+
+npm run seeds.csv
+
+npm run server
+
+
+
+### Prerequisites
+
+NodeJS
+Terminal/Bash
+Source Code Editor
+MySQL
+mySQLWorkbench
+
+
 ## Team
 
 Juju  |  Sasha  |  Alex  | Chris
+
+
+### Acknowledgements
+
+The teaching staff at Columbia Full Stack Bootcamp
+Fellow classmates 
