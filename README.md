@@ -16,6 +16,15 @@ Alex is a student at a coding bootcamp! He spends 12+ hours per day in front of 
 Persona: ​LN
 LN loves having ramen with her bf, but her bf just turned vegan! She wants to be supportive so she is always looking for the next best vegan ramen recipe. Our app will provide her with many vegan ramen recipes to search through till she finds her favorite one!
 
+## Built With
+
+• ReactJS   • Express   • MongoDB   • NodeJS  • Heroku  • Github  
+
 ## Team
 
 Juju  |  Sasha  |  Alex  | Chris
+
+## Deployed
+
+https://stark-shelf-28495.herokuapp.com/
+
