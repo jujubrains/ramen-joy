@@ -22,7 +22,7 @@ LN loves having ramen with her bf, but her bf just turned vegan! She wants to be
 
 ## Team
 
-Juju  |  Sasha  |  Alex  | Chris
+JuJu  |  Sasha  |  Alex  | Chris
 
 ## Deployed
 
