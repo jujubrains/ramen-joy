@@ -24,7 +24,6 @@ LN loves having ramen with her bf, but her bf just turned vegan! She wants to be
 •   ReactJS
 •   MongoDB
 •   Mongoose
-•   NodeJS
 •   Axios
 
 
@@ -55,7 +54,12 @@ mySQLWorkbench
 
 ## Team
 
-Juju  |  Sasha  |  Alex  | Chris
+JuJu  |  Sasha  |  Alex  | Chris
+
+
+## Deployed
+
+https://stark-shelf-28495.herokuapp.com/
 
 
 ### Acknowledgements
